@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://mytube/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://mytube/">
+
+<xs:element name="downloadVideo" type="tns:downloadVideo" />
+
+<xs:element name="downloadVideoResponse" type="tns:downloadVideoResponse" />
+
+<xs:element name="hello" type="tns:hello" />
+
+<xs:element name="helloResponse" type="tns:helloResponse" />
+
+<xs:element name="uploadVideo" type="tns:uploadVideo" />
+
+<xs:element name="uploadVideoResponse" type="tns:uploadVideoResponse" />
+
+<xs:complexType name="uploadVideo">
+<xs:sequence>
+<xs:element name="filename" type="xs:string" minOccurs="0" />
+<xs:element name="filedata" type="xs:base64Binary" nillable="true" minOccurs="0" />
+<xs:element name="filedescription" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="uploadVideoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="downloadVideo">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="downloadVideoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:videoFile" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="videoFile">
+<xs:sequence>
+<xs:element name="filename" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:string" minOccurs="0" />
+<xs:element name="data" type="xs:base64Binary" minOccurs="0" />
+<xs:element name="description" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
